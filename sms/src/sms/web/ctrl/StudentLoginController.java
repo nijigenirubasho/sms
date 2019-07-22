@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +46,15 @@ public class StudentLoginController extends HttpServlet {
 				log("目前有" + SessionCounter.getCount() + "个会话");
 				resp.sendRedirect(req.getContextPath() + "/mainPanel.jsp");
 			} else {
-				req.setAttribute("student_login_msg", "登录失败，请确认学生名或者密码是否正确");
+				// 方便重填
+				Cookie nameCookie = new Cookie("name", studentAccount);
+				Cookie pwdCookie = new Cookie("pwd", studentPwd);
+				nameCookie.setMaxAge(120);
+				pwdCookie.setMaxAge(60);
+				resp.addCookie(nameCookie);
+				resp.addCookie(pwdCookie);
+				req.setAttribute("student_login_msg",
+						"登录失败，请确认学生名或者密码是否正确。" + "<br />" + "现在登录信息已经清空，在一分钟内手动刷新可以载入之前的登录信息。");
 				doGet(req, resp);
 			}
 			return;

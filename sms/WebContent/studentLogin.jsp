@@ -19,12 +19,22 @@
 	<%=msg%>
 	<%
 		}
+		String name = "", pwd = "";
+		if (request.getCookies() != null)
+			for (Cookie cookie : request.getCookies()) {
+				if ("name".equals(cookie.getName())) {
+					name = cookie.getValue();
+				}
+				if ("pwd".equals(cookie.getName())) {
+					pwd = cookie.getValue();
+				}
+			}
 	%>
 	<form action="<%=request.getContextPath()%>/studentLogin.do"
 		method="post">
-		账号名：<input name="studentAccount" type="text"><br /> 密码：<input
-			name="studentPwd" type="password"><br /> <input value="学生登陆"
-			type="submit">
+		账号名：<input name="studentAccount" type="text" value="<%=name%>"><br />
+		密码：<input name="studentPwd" type="password" value="<%=pwd%>"><br />
+		<input value="学生登陆" type="submit">
 	</form>
 </body>
 </html>
