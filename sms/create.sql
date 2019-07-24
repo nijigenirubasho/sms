@@ -1,8 +1,8 @@
 CREATE TABLE `tb_student` (
-	`student_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Ñ§Éú±àºÅ',
-	`student_name` VARCHAR(50) NULL DEFAULT NULL COMMENT 'Ñ§ÉúÃû',
-	`student_account` VARCHAR(50) NULL DEFAULT NULL COMMENT 'Ñ§ÉúÕËºÅ',
-	`student_pwd` VARCHAR(50) NULL DEFAULT NULL COMMENT 'Ñ§ÉúµÇÂ¼ÃÜÂë',
+	`student_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'å­¦ç”Ÿç¼–å·',
+	`student_name` VARCHAR(50) NULL DEFAULT NULL COMMENT 'å­¦ç”Ÿå',
+	`student_account` VARCHAR(50) NULL DEFAULT NULL COMMENT 'å­¦ç”Ÿè´¦å·',
+	`student_pwd` VARCHAR(50) NULL DEFAULT NULL COMMENT 'å­¦ç”Ÿç™»å½•å¯†ç ',
 	PRIMARY KEY (`student_id`),
 	UNIQUE `student_name` (`student_name`)
 ) COLLATE = 'utf8_general_ci' ENGINE = InnoDB;

@@ -12,7 +12,7 @@ public class SessionCounter implements HttpSessionAttributeListener {
 
 	@Override
 	public void attributeAdded(HttpSessionBindingEvent event) {
-		System.out.println("-¼àÌı session µÄ×÷ÓÃÓòµÄÖµ±»Ôö¼Ó-");
+		System.out.println("-ç›‘å¬ session çš„ä½œç”¨åŸŸçš„å€¼è¢«å¢åŠ -");
 		HttpSession session = event.getSession();
 		Object user = session.getAttribute("student");
 		if (user != null) {
@@ -23,13 +23,13 @@ public class SessionCounter implements HttpSessionAttributeListener {
 
 	@Override
 	public void attributeRemoved(HttpSessionBindingEvent event) {
-		System.out.println("-session ×÷ÓÃÓòµÄÖµ±»É¾³ı-");
+		System.out.println("-session ä½œç”¨åŸŸçš„å€¼è¢«åˆ é™¤-");
 		count--;
 	}
 
 	@Override
 	public void attributeReplaced(HttpSessionBindingEvent event) {
-		System.out.println("sesssion ×÷ÓÃÓò±»ĞŞ¸ÄÁË");
+		System.out.println("sesssion ä½œç”¨åŸŸè¢«ä¿®æ”¹äº†");
 	}
 
 	public static int getCount() {

@@ -23,7 +23,7 @@ public class StudentListController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log("-Ñ§ÉúĞÅÏ¢ÁĞ±í,¿ØÖÆÆ÷-");
+		log("-å­¦ç”Ÿä¿¡æ¯åˆ—è¡¨,æ§åˆ¶å™¨-");
 		Student student = (Student) req.getSession().getAttribute("student");
 		if (student != null) {
 			StudentService studentService = new StudentService();

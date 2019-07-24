@@ -13,14 +13,14 @@ import sms.pojo.Student;
 class StudentDAOTest {
 
 	/**
-	 * JUnit µÄ·½·¨ÒªÇó 1.²»ÄÜÓĞ·µ»ØÀàĞÍ 2.±ØĞëÊÇÒ»¸ö³ÉÔ±ÆÕÍ¨·½·¨¡¢²»ÄÜ¼ÓÈÎºÎÆäËû¹Ø¼ü×Ö£¬Èç static\final 3.·½·¨²»ÄÜÓĞ²ÎÊı
-	 * 4.·½·¨±ØĞëÒª¼ÓÉÏ@Test ×¢½â
+	 * JUnit çš„æ–¹æ³•è¦æ±‚ 1.ä¸èƒ½æœ‰è¿”å›ç±»å‹ 2.å¿…é¡»æ˜¯ä¸€ä¸ªæˆå‘˜æ™®é€šæ–¹æ³•ã€ä¸èƒ½åŠ ä»»ä½•å…¶ä»–å…³é”®å­—ï¼Œå¦‚ static\final 3.æ–¹æ³•ä¸èƒ½æœ‰å‚æ•°
+	 * 4.æ–¹æ³•å¿…é¡»è¦åŠ ä¸Š@Test æ³¨è§£
 	 */
 
 	@Test
 	public void insert() {
-		//assertTrue(false, "Ìø¹ı£¨±£»¤Êı¾İ£©");
-		String testName = "ÕÅÈı", testAccount = "zhangsan";
+		//assertTrue(false, "è·³è¿‡ï¼ˆä¿æŠ¤æ•°æ®ï¼‰");
+		String testName = "å¼ ä¸‰", testAccount = "zhangsan";
 		StudentDAO studentDAO = new StudentDAO();
 		Student entity = new Student();
 		entity.setStudentName(testName);
@@ -28,7 +28,7 @@ class StudentDAOTest {
 		try {
 			int insert = studentDAO.insert(entity);
 			System.out.println(insert);
-			// É¾³ı²âÊÔÊı¾İ
+			// åˆ é™¤æµ‹è¯•æ•°æ®
 			studentDAO.deleteById(studentDAO.findByAccount(testAccount).getStudentId());
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -41,7 +41,7 @@ class StudentDAOTest {
 		StudentDAO studentDAO = new StudentDAO();
 		try {
 			Student student = studentDAO.findByAccount("lisi");
-			System.out.println("Ñ§ÉúÃû£º" + student.getStudentName());
+			System.out.println("å­¦ç”Ÿåï¼š" + student.getStudentName());
 		} catch (SQLException | NullPointerException e) {
 			e.printStackTrace();
 			fail(e);
@@ -54,15 +54,15 @@ class StudentDAOTest {
 		List<Student> students;
 		try {
 			students = dao.findAll();
-			assertNotNull(students, "Ñ§ÉúÊı¾İÎª¿Õ");
-			assertNotEquals(0, students.size(), "Ñ§ÉúÊı¾İÁĞ±íÎª¿Õ");
+			assertNotNull(students, "å­¦ç”Ÿæ•°æ®ä¸ºç©º");
+			assertNotEquals(0, students.size(), "å­¦ç”Ÿæ•°æ®åˆ—è¡¨ä¸ºç©º");
 			for (Student student : students) {
 				assertNotNull(student);
 				System.out.println(student);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			fail("SQLÒì³£", e);
+			fail("SQLå¼‚å¸¸", e);
 		}
 	}
 }

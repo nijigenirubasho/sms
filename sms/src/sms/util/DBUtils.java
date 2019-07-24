@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBUtils {
 
 	/**
-	 * È¡µÃÁ´½Ó£¬×¢ÒâÕâÀïÒÑ¾­Ô¤ÉèÁËÊı¾İ¿âÁ´½ÓĞÅÏ¢
+	 * å–å¾—é“¾æ¥ï¼Œæ³¨æ„è¿™é‡Œå·²ç»é¢„è®¾äº†æ•°æ®åº“é“¾æ¥ä¿¡æ¯
 	 * 
 	 * @return {@link Connection}
 	 */
@@ -26,12 +26,12 @@ public class DBUtils {
 	}
 
 	/**
-	 * È¡µÃÁ´½Ó
+	 * å–å¾—é“¾æ¥
 	 * 
-	 * @param driver   Çı¶¯Àà
-	 * @param url      Á´½Ó
-	 * @param user     ÓÃ»§Ãû
-	 * @param password ÃÜÂë
+	 * @param driver   é©±åŠ¨ç±»
+	 * @param url      é“¾æ¥
+	 * @param user     ç”¨æˆ·å
+	 * @param password å¯†ç 
 	 * @return  {@link Connection}
 	 */
 	public static Connection getConnection(String driver, String url, String user, String password) {

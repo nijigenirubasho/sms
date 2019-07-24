@@ -32,14 +32,14 @@ public class StudentAddController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			log("-Ôö¼ÓÑ§Éú-¿ØÖÆÆ÷-");
+			log("-å¢åŠ å­¦ç”Ÿ-æ§åˆ¶å™¨-");
 			StudentService studentService = new StudentService();
 			String studentName = req.getParameter("studentName");
 			String studentAccount = req.getParameter("studentAccount");
 			String studentPwd = req.getParameter("studentPwd");
 			if (StringUtils.isEmptyOrWhitespaceOnly(studentPwd)
 					|| StringUtils.isEmptyOrWhitespaceOnly(studentAccount)) {
-				req.setAttribute("student_add_msg", "Ê§°Ü£¬ÓÃ»§ÃûºÍÃÜÂë¶¼²»×¼Îª¿Õ");
+				req.setAttribute("student_add_msg", "å¤±è´¥ï¼Œç”¨æˆ·åå’Œå¯†ç éƒ½ä¸å‡†ä¸ºç©º");
 				doGet(req, resp);
 				return;
 			}
@@ -47,21 +47,21 @@ public class StudentAddController extends HttpServlet {
 			student.setStudentName(studentName);
 			student.setStudentAccount(studentAccount);
 			student.setStudentPwd(studentPwd);
-			System.out.println("Ñ§ÉúÃû£º" + student.getStudentName());
+			System.out.println("å­¦ç”Ÿåï¼š" + student.getStudentName());
 			boolean flag = studentService.addStudent(student);
 			if (flag) {
-				req.setAttribute("student_add_msg", "³É¹¦");
+				req.setAttribute("student_add_msg", "æˆåŠŸ");
 
 				Record record = new Record(((Student) req.getSession().getAttribute("student")).getStudentAccount(),
 						Type.ADD, student.toString());
 				RecordService recordService = new RecordService(req);
 				recordService.addRecord(record);
 			} else {
-				req.setAttribute("student_add_msg", "Ê§°Ü");
+				req.setAttribute("student_add_msg", "å¤±è´¥");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			req.setAttribute("student_add_msg", "Ê§°Ü£¬³öÏÖÒì³£");
+			req.setAttribute("student_add_msg", "å¤±è´¥ï¼Œå‡ºç°å¼‚å¸¸");
 		}
 		doGet(req, resp);
 	}

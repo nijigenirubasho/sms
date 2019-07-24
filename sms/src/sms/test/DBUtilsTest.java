@@ -13,7 +13,7 @@ class DBUtilsTest {
 		String string = DBUtils.getConnection().toString();
 		System.out.println(string);
 		assertNotNull(string);
-		// 自定义数据库测试
+		// 鑷畾涔夋暟鎹簱娴嬭瘯
 		assertNotNull(DBUtils.getConnection("com.mysql.jc.jdbc.Driver",
 				"jdbc:mysql://localhost:3306/table1?serverTimezone=UTC", "root", "0"));
 	}

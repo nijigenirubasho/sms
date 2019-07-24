@@ -16,8 +16,8 @@ public class StudentController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.err.println("!!!WELCOME TO STUDENT MANAGEMENT SYSTEM!!!");
-		System.out.println("--入口：studentLogin.jsp--");
-		// resp.sendError(451, "走错门了");
+		System.out.println("--鍏ュ彛锛歴tudentLogin.jsp--");
+		// resp.sendError(451, "璧伴敊闂ㄤ簡");
 		resp.sendRedirect(req.getContextPath() + "/studentLogin.jsp");
 	}
 }

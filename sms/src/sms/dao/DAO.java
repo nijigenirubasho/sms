@@ -6,25 +6,25 @@ import java.util.List;
 public interface DAO<T> {
 
 	/**
-	 * ²åÈë¼ÇÂ¼
+	 * æ’å…¥è®°å½•
 	 * 
-	 * @param entity ²ÎÈëÊµÌåÀà¶ÔÏó
-	 * @return ·µ»ØµÄÊÇÊı¾İ¿â²Ù×÷Ó°ÏìµÄĞĞÊı
+	 * @param entity å‚å…¥å®ä½“ç±»å¯¹è±¡
+	 * @return è¿”å›çš„æ˜¯æ•°æ®åº“æ“ä½œå½±å“çš„è¡Œæ•°
 	 * @throws SQLException
 	 */
 	int insert(T entity) throws SQLException;
 
 	/**
-	 * Ñ°ÕÒËùÓĞ¼ÇÂ¼
+	 * å¯»æ‰¾æ‰€æœ‰è®°å½•
 	 * @return
 	 * @throws SQLException
 	 */
 	List<T> findAll() throws SQLException;
 
 	/**
-	 * ¸ù¾İIDÉ¾³ıÊı¾İ
+	 * æ ¹æ®IDåˆ é™¤æ•°æ®
 	 * @param id
-	 * @return ·µ»ØµÄÊÇÊı¾İ¿â²Ù×÷Ó°ÏìµÄĞĞÊı
+	 * @return è¿”å›çš„æ˜¯æ•°æ®åº“æ“ä½œå½±å“çš„è¡Œæ•°
 	 * @throws SQLException
 	 */
 	int deleteById(Integer id) throws SQLException;

@@ -24,7 +24,7 @@ public class StudentEditController extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log("-±à¼­Ñ§Éú-¿ØÖÆÆ÷-");
+		log("-ç¼–è¾‘å­¦ç”Ÿ-æ§åˆ¶å™¨-");
 		super.service(req, resp);
 	}
 
@@ -56,7 +56,7 @@ public class StudentEditController extends HttpServlet {
 			String studentAccount = req.getParameter("studentAccount");
 			String studentPwd = req.getParameter("studentPwd");
 
-			// Êı¾İ·â×°
+			// æ•°æ®å°è£…
 			int id = Integer.parseInt(studentId);
 			Student student = new Student();
 			student.setStudentId(id);
@@ -64,7 +64,7 @@ public class StudentEditController extends HttpServlet {
 			student.setStudentAccount(studentAccount);
 			student.setStudentPwd(studentPwd);
 
-			// ½«Êı¾İ¸üĞÂ
+			// å°†æ•°æ®æ›´æ–°
 			StudentService studentService = new StudentService();
 			try {
 				Student srcStudent = studentService.findStudentById(id);
@@ -86,7 +86,7 @@ public class StudentEditController extends HttpServlet {
 				e.printStackTrace();
 			}
 
-			// Ìø»Øµ½Ò³Ãæ
+			// è·³å›åˆ°é¡µé¢
 			resp.sendRedirect(req.getContextPath() + "/studentList.do");
 		}
 	}

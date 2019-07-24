@@ -29,7 +29,7 @@ public class StudentDAO implements DAO<Student> {
 	}
 
 	/**
-	 * ¸ù¾İÕËºÅÃû·µ»ØÎ¨Ò»µÄÑ§ÉúĞÅÏ¢
+	 * æ ¹æ®è´¦å·åè¿”å›å”¯ä¸€çš„å­¦ç”Ÿä¿¡æ¯
 	 * 
 	 * @param studentAccount
 	 * @return
@@ -88,20 +88,20 @@ public class StudentDAO implements DAO<Student> {
 
 	@Override
 	public int deleteById(Integer id) throws SQLException {
-		// 1.»ñµÃÊı¾İ¿âÁ¬½Ó
+		// 1.è·å¾—æ•°æ®åº“è¿æ¥
 		Connection conn = DBUtils.getConnection();
-		String sql = "DELETE FROM tb_student WHERE student_id=?"; // 2.»ñµÃ²Ù×÷¶ÔÏó
-		PreparedStatement ps = conn.prepareStatement(sql); // ÉèÖÃ²ÎÊı
+		String sql = "DELETE FROM tb_student WHERE student_id=?"; // 2.è·å¾—æ“ä½œå¯¹è±¡
+		PreparedStatement ps = conn.prepareStatement(sql); // è®¾ç½®å‚æ•°
 		ps.setInt(1, id);
-		// 3.²Ù×÷-²åÈë
+		// 3.æ“ä½œ-æ’å…¥
 		int count = ps.executeUpdate();
 		ps.close();
-		conn.close(); // 4.¹Ø±Õ
+		conn.close(); // 4.å…³é—­
 		return count;
 	}
 
 	/**
-	 * ¸üĞÂÑ§Éú·Ç¿ÕµÄ×Ö¶Î£¬Í¨¹ı±àºÅ
+	 * æ›´æ–°å­¦ç”Ÿéç©ºçš„å­—æ®µï¼Œé€šè¿‡ç¼–å·
 	 * 
 	 * @param student
 	 * @return

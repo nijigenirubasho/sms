@@ -16,10 +16,10 @@ public class RecordService {
 	}
 
 	/**
-	 * Ìí¼Ó¼ÇÂ¼
+	 * æ·»åŠ è®°å½•
 	 * 
 	 * @param record
-	 * @return ·µ»Ø¼ÇÂ¼ÁÐ±í³¤¶È£¬Ê§°Ü·µ»Ø-1
+	 * @return è¿”å›žè®°å½•åˆ—è¡¨é•¿åº¦ï¼Œå¤±è´¥è¿”å›ž-1
 	 */
 	public int addRecord(Record record) {
 		RecordDAO dao = new RecordDAO(request.getServletContext());

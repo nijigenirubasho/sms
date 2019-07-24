@@ -24,29 +24,29 @@ public class StudentLoginController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log("-Ñ§ÉúµÇÂ¼-¿ØÖÆÆ÷-");
+		log("-å­¦ç”Ÿç™»å½•-æ§åˆ¶å™¨-");
 		try {
 			StudentService studentService = new StudentService();
 			String studentAccount = req.getParameter("studentAccount");
 			String studentPwd = req.getParameter("studentPwd");
 			if (StringUtils.isEmptyOrWhitespaceOnly(studentPwd)
 					|| StringUtils.isEmptyOrWhitespaceOnly(studentAccount)) {
-				req.setAttribute("student_login_msg", "µÇÂ¼Ê§°Ü£¬ÓÃ»§ÃûºÍÃÜÂë¶¼²»×¼Îª¿Õ");
+				req.setAttribute("student_login_msg", "ç™»å½•å¤±è´¥ï¼Œç”¨æˆ·åå’Œå¯†ç éƒ½ä¸å‡†ä¸ºç©º");
 				doGet(req, resp);
 				return;
 			}
 			Student student = new Student();
 			student.setStudentAccount(studentAccount);
 			student.setStudentPwd(studentPwd);
-			System.out.println("ÕËºÅÃû£º" + student.getStudentAccount());
+			System.out.println("è´¦å·åï¼š" + student.getStudentAccount());
 			Student resultStudent = studentService.loginStudent(student);
 			if (resultStudent != null) {
 				HttpSession session = req.getSession();
 				session.setAttribute("student", resultStudent);
-				log("Ä¿Ç°ÓĞ" + SessionCounter.getCount() + "¸ö»á»°");
+				log("ç›®å‰æœ‰" + SessionCounter.getCount() + "ä¸ªä¼šè¯");
 				resp.sendRedirect(req.getContextPath() + "/mainPanel.jsp");
 			} else {
-				// ·½±ãÖØÌî
+				// æ–¹ä¾¿é‡å¡«
 				Cookie nameCookie = new Cookie("name", studentAccount);
 				Cookie pwdCookie = new Cookie("pwd", studentPwd);
 				nameCookie.setMaxAge(120);
@@ -54,14 +54,14 @@ public class StudentLoginController extends HttpServlet {
 				resp.addCookie(nameCookie);
 				resp.addCookie(pwdCookie);
 				req.setAttribute("student_login_msg",
-						"µÇÂ¼Ê§°Ü£¬ÇëÈ·ÈÏÑ§ÉúÃû»òÕßÃÜÂëÊÇ·ñÕıÈ·¡£" + "<br />" + "ÏÖÔÚµÇÂ¼ĞÅÏ¢ÒÑ¾­Çå¿Õ£¬ÔÚÒ»·ÖÖÓÄÚÊÖ¶¯Ë¢ĞÂ¿ÉÒÔÔØÈëÖ®Ç°µÄµÇÂ¼ĞÅÏ¢¡£");
+						"ç™»å½•å¤±è´¥ï¼Œè¯·ç¡®è®¤å­¦ç”Ÿåæˆ–è€…å¯†ç æ˜¯å¦æ­£ç¡®ã€‚" + "<br />" + "ç°åœ¨ç™»å½•ä¿¡æ¯å·²ç»æ¸…ç©ºï¼Œåœ¨ä¸€åˆ†é’Ÿå†…æ‰‹åŠ¨åˆ·æ–°å¯ä»¥è½½å…¥ä¹‹å‰çš„ç™»å½•ä¿¡æ¯ã€‚");
 				doGet(req, resp);
 			}
 			return;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		req.setAttribute("student_login_msg", "µÇÂ¼Ê§°Ü£¬ÄÚ²¿´íÎó");
+		req.setAttribute("student_login_msg", "ç™»å½•å¤±è´¥ï¼Œå†…éƒ¨é”™è¯¯");
 		doGet(req, resp);
 	}
 

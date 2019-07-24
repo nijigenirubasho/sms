@@ -9,7 +9,7 @@ import sms.pojo.Student;
 public class StudentService {
 
 	/**
-	 * Ôö¼ÓÑ§Éú
+	 * å¢åŠ å­¦ç”Ÿ
 	 * 
 	 * @param student
 	 * @return
@@ -22,10 +22,10 @@ public class StudentService {
 	}
 
 	/**
-	 * Ñ§ÉúµÇÂ¼
+	 * å­¦ç”Ÿç™»å½•
 	 * 
 	 * @param student
-	 * @return ÈôµÇÂ¼³É¹¦£¬¸ù¾İÊı¾İ¿âĞÅÏ¢·µ»ØÏà¶ÔÓ¦µÄÑ§Éú¶ÔÏó£¬·ñÔò·µ»Ø¿Õ
+	 * @return è‹¥ç™»å½•æˆåŠŸï¼Œæ ¹æ®æ•°æ®åº“ä¿¡æ¯è¿”å›ç›¸å¯¹åº”çš„å­¦ç”Ÿå¯¹è±¡ï¼Œå¦åˆ™è¿”å›ç©º
 	 * @throws SQLException
 	 */
 	public Student loginStudent(Student student) throws SQLException {
@@ -39,7 +39,7 @@ public class StudentService {
 	}
 
 	/**
-	 * ²éÑ¯ËùÓĞÑ§Éú
+	 * æŸ¥è¯¢æ‰€æœ‰å­¦ç”Ÿ
 	 * 
 	 * @return
 	 * @throws SQLException
@@ -50,7 +50,7 @@ public class StudentService {
 	}
 
 	/**
-	 * Í¨¹ıIDÉ¾³ıÑ§Éú
+	 * é€šè¿‡IDåˆ é™¤å­¦ç”Ÿ
 	 * 
 	 * @param studentId
 	 * @return
@@ -63,7 +63,7 @@ public class StudentService {
 	}
 
 	/**
-	 * Í¨¹ıID²éÕÒÑ§Éú
+	 * é€šè¿‡IDæŸ¥æ‰¾å­¦ç”Ÿ
 	 * 
 	 * @param id
 	 * @return
@@ -75,7 +75,7 @@ public class StudentService {
 	}
 
 	/**
-	 * ±à¼­Ñ§Éú
+	 * ç¼–è¾‘å­¦ç”Ÿ
 	 * 
 	 * @param student
 	 * @return

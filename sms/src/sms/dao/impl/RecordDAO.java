@@ -35,6 +35,6 @@ public class RecordDAO implements DAO<Record> {
 
 	@Override
 	public int deleteById(Integer id) throws SQLException {
-		throw new SQLException("不能删除操作记录");
+		throw new SQLException("涓嶈兘鍒犻櫎鎿嶄綔璁板綍");
 	}
 }

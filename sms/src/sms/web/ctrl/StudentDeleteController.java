@@ -30,9 +30,9 @@ public class StudentDeleteController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log("-É¾³ıÑ§Éú-¿ØÖÆÆ÷-");
+		log("-åˆ é™¤å­¦ç”Ÿ-æ§åˆ¶å™¨-");
 		String studentId = req.getParameter("studentId");
-		System.out.println("Ñ§Éú±àºÅ:" + studentId);
+		System.out.println("å­¦ç”Ÿç¼–å·:" + studentId);
 		StudentService studentService = new StudentService();
 		try {
 			Integer id = Integer.valueOf(studentId);

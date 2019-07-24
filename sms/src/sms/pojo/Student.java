@@ -2,11 +2,11 @@ package sms.pojo;
 
 public class Student {
 
-	// ÓÃInteger¶ø²»ÓÃintµÄÔ­Òò£ºÊı¾İ¿É¿Õ
-	private Integer studentId;// INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Ñ§Éú±àºÅ',
-	private String studentName;// VARCHAR(50) NULL DEFAULT NULL COMMENT 'Ñ§ÉúÃû',
-	private String studentAccount;// VARCHAR(50) NULL DEFAULT NULL COMMENT 'Ñ§ÉúÕËºÅ',
-	private String studentPwd;// VARCHAR(50) NULL DEFAULT NULL COMMENT 'Ñ§ÉúµÇÂ¼ÃÜÂë',
+	// ç”¨Integerè€Œä¸ç”¨intçš„åŸå› ï¼šæ•°æ®å¯ç©º
+	private Integer studentId;// INT(11) NOT NULL AUTO_INCREMENT COMMENT 'å­¦ç”Ÿç¼–å·',
+	private String studentName;// VARCHAR(50) NULL DEFAULT NULL COMMENT 'å­¦ç”Ÿå',
+	private String studentAccount;// VARCHAR(50) NULL DEFAULT NULL COMMENT 'å­¦ç”Ÿè´¦å·',
+	private String studentPwd;// VARCHAR(50) NULL DEFAULT NULL COMMENT 'å­¦ç”Ÿç™»å½•å¯†ç ',
 
 	public Integer getStudentId() {
 		return studentId;
