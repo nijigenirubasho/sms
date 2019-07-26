@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>delete</title>
+<title>删除学生</title>
 </head>
 <%
 	if (session.getAttribute("student") != null) {

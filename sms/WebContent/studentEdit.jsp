@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>编辑学生</title>
 </head>
 <body>
 	<div style="text-align: center;">

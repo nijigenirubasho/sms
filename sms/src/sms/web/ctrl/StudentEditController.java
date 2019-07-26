@@ -68,12 +68,19 @@ public class StudentEditController extends HttpServlet {
 			StudentService studentService = new StudentService();
 			try {
 				Student srcStudent = studentService.findStudentById(id);
+				if (srcStudent == null) {
+					log("传入的id被篡改");
+					resp.getWriter().println("Invalid Operation:ID changed.");
+					return;
+				}
 				studentService.editStudent(student);
 
 				StringBuilder recordBuilder = new StringBuilder();
 				recordBuilder.append("ID:" + id);
 				for (Field field : Student.class.getDeclaredFields()) {
 					field.setAccessible(true);
+					if (field.getName().equals("studentId"))
+						continue;
 					if (Objects.equals(field.get(srcStudent), field.get(student)) == false) {
 						recordBuilder.append(" " + field.getName() + ":[" + field.get(srcStudent) + " -> "
 								+ field.get(student) + "]");
